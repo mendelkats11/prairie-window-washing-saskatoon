@@ -7,3 +7,7 @@
  */
 
 define('RESEND_API_KEY', 'your-resend-api-key-here');
+
+// Shared secret for verifying GitHub's deploy webhook (see deploy.php).
+// Generate one with: php -r "echo bin2hex(random_bytes(32));"
+define('DEPLOY_WEBHOOK_SECRET', 'your-random-webhook-secret-here');
