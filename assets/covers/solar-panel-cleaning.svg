@@ -1,0 +1,34 @@
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Solar Panel Cleaning">
+  <defs>
+    <linearGradient id="bg-solar-panel-cleaning" x1="0" y1="0" x2="600" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#141c26"/>
+      <stop offset="1" stop-color="#0a0e13"/>
+    </linearGradient>
+    <radialGradient id="glow-solar-panel-cleaning" cx="0.78" cy="0.18" r="0.65">
+      <stop offset="0" stop-color="#7f9a4d" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#7f9a4d" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2-solar-panel-cleaning" cx="0.12" cy="0.92" r="0.55">
+      <stop offset="0" stop-color="#7f9a4d" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#7f9a4d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="stripe-solar-panel-cleaning" x1="0" y1="0" x2="600" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f0b23c"/>
+      <stop offset="1" stop-color="#7f9a4d"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#bg-solar-panel-cleaning)"/>
+  <rect width="600" height="400" fill="url(#glow-solar-panel-cleaning)"/>
+  <rect width="600" height="400" fill="url(#glow2-solar-panel-cleaning)"/>
+
+  <circle cx="300" cy="175" r="118" fill="none" stroke="#7f9a4d" stroke-opacity="0.16" stroke-width="1.5"/>
+  <circle cx="300" cy="175" r="150" fill="none" stroke="#7f9a4d" stroke-opacity="0.08" stroke-width="1.5"/>
+
+  <g transform="translate(300,175) scale(7.6) translate(-12,-12)" fill="none" stroke="#7f9a4d" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/>
+  </g>
+  
+
+  <rect x="0" y="392" width="600" height="8" fill="url(#stripe-solar-panel-cleaning)"/>
+</svg>

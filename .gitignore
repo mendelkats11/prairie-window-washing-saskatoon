@@ -1,0 +1,9 @@
+# Secrets — never commit real API keys
+config.local.php
+
+# OS/editor cruft
+.DS_Store
+Thumbs.db
+
+# Vercel (unused now, kept out just in case)
+.vercel
