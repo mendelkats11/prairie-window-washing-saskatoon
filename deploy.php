@@ -93,14 +93,22 @@ if ($ref !== 'refs/heads/' . GITHUB_BRANCH) {
     exit;
 }
 
-deploy_log('Push to ' . GITHUB_BRANCH . ' received. Starting deploy...');
+$commitSha = $payload['after'] ?? '';
+if ($commitSha === '') {
+    fail(400, 'Push payload is missing the commit SHA.');
+}
 
-// --- Download the latest commit as a zip ---
+deploy_log('Push to ' . GITHUB_BRANCH . ' received (' . $commitSha . '). Starting deploy...');
+
+// --- Download that exact commit as a zip ---
+// Fetching by commit SHA (not branch name) is deliberate: GitHub/codeload
+// caches archives, and a branch-name URL can serve a stale zip for a short
+// window right after a push. A SHA is immutable, so it's always fresh.
 $zipUrl = sprintf(
     'https://api.github.com/repos/%s/%s/zipball/%s',
     GITHUB_OWNER,
     GITHUB_REPO,
-    GITHUB_BRANCH
+    $commitSha
 );
 
 $tmpZip = tempnam(sys_get_temp_dir(), 'deploy_') . '.zip';
@@ -188,7 +196,6 @@ function deploy_rrmdir($dir) {
 }
 deploy_rrmdir($tmpExtractDir);
 
-$commitSha = $payload['after'] ?? 'unknown';
 deploy_log('Deploy complete. Commit: ' . $commitSha);
 
 header('Content-Type: application/json');
